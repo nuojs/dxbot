@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- <link rel="icon" type="image/svg+xml" href="/vite.svg" /> -->
+    <link href="/assets/css/flat-ui.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>dxbot</title>
+    <link href="/assets/css/vendor/bootstrap.min.css" rel="stylesheet" />
+    <!-- <link rel="stylesheet" href="/assets/css/jquery-ui.css" /> -->
+    <!-- <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/jqueryui@1.11.1/jquery-ui.min.css"
+    /> -->
+    <link
+      rel="stylesheet"
+      href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css"
+    />
+    <link
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      rel="stylesheet"
+    />
+    <link href="/assets/css/flat-ui.css" rel="stylesheet" />
+    <link href="/docs/assets/css/demo.css" rel="stylesheet" />
+    <script src="/assets/scripts/jquery-3.6.0.js"></script>
+    <style>
+      #notifications {
+        cursor: pointer;
+        position: fixed;
+        right: 0px;
+        z-index: 9999;
+        bottom: 0px;
+        margin-bottom: 22px;
+        margin-right: 15px;
+        max-width: 300px;
+      }
+    </style>
+    <script>
+      Notify = function (text, callback, close_callback, style) {
+        var time = "2000";
+        var $container = $("#notifications");
+        var icon = '<i class="fa fa-info-circle "></i>';
+
+        if (typeof style == "undefined") style = "warning";
+
+        var html = $(
+          '<div class="alert alert-' +
+            style +
+            '  hide">' +
+            icon +
+            " " +
+            text +
+            "</div>"
+        );
+
+        $("<a>", {
+          text: "×",
+          class: "button close",
+          style: "padding-left: 10px;",
+          href: "#",
+          click: function (e) {
+            e.preventDefault();
+            close_callback && close_callback();
+            remove_notice();
+          },
+        }).prependTo(html);
+
+        $container.prepend(html);
+        html.removeClass("hide").hide().fadeIn("slow");
+
+        function remove_notice() {
+          html.stop().fadeOut("slow").remove();
+        }
+
+        var timer = setInterval(remove_notice, time);
+
+        $(html).hover(
+          function () {
+            clearInterval(timer);
+          },
+          function () {
+            timer = setInterval(remove_notice, time);
+          }
+        );
+
+        html.on("click", function () {
+          clearInterval(timer);
+          callback && callback();
+          remove_notice();
+        });
+      };
+    </script>
+    <!-- Bootstrap 4 requires Popper.js -->
+    <!-- <script
+      src="https://unpkg.com/popper.js@1.14.1/dist/umd/popper.min.js"
+      crossorigin="anonymous"
+    ></script> -->
+    <!-- <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.min.js"
+      integrity="sha512-1/RvZTcCDEUjY/CypiMz+iqqtaoQfAITmNSJY17Myp4Ms5mdxPS5UV7iOfdZoxcGhzFbOm6sntTKJppjvuhg4g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="http://vjs.zencdn.net/6.6.3/video.js"></script> -->
+    <script src="/assets/scripts/flat-ui.js"></script>
+    <script src="/assets/scripts/application.js"></script>
+    <!-- <script src="/assets/scripts/minify.js"></script> -->
+    <script src="/assets/scripts/indicator.js"></script>
+    <!-- <script src="/assets/jquery-linedtextarea.js"></script>
+    <link rel="stylesheet" href="/assets/jquery-linedtextarea.css" /> -->
+
+    <!-- <script src="
+    /assets/scripts/coffeescript.min.js
+    "></script> -->
+
+    <script src="/assets/scripts/jquery-ui.js"></script>
+    <script type="module" crossorigin src="/assets/main-ae5cc49a.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/modulepreload-polyfill-3cfb730f.js">
+    <link rel="stylesheet" href="/assets/index-9b42f2ec.css">
+  </head>
+  <body>
+    <div id="root"></div>
+    
+    <div id="notifications"></div>
+    <!-- <script>
+      $(document).ready(function () {
+        $.each(["danger", "warning", "info", "success"], function (i, type) {
+          $("." + type).on("click", function () {
+            Notify("Stop! Hammer time", null, null, type);
+          });
+        });
+
+        $(".callback").on("click", function () {
+          Notify(
+            "I told you homeboy (You can't touch this)",
+            function () {
+              alert("clicked notification");
+            },
+            function () {
+              alert("clicked x");
+            }
+          );
+        });
+
+        $(".callback-success").on("click", function () {
+          Notify(
+            "I told you homeboy (You can't touch this)",
+            function () {
+              alert("clicked notification");
+            },
+            function () {
+              alert("clicked x");
+            },
+            "success"
+          );
+        });
+
+        // Notify("Can't Touch This");
+        // Notify("Stop! Hammer time", null, null, "danger");
+      });
+    </script> -->
+  </body>
+</html>
