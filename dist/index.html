@@ -7,11 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>dxbot</title>
     <link href="/assets/css/vendor/bootstrap.min.css" rel="stylesheet" />
-    <!-- <link rel="stylesheet" href="/assets/css/jquery-ui.css" /> -->
-    <!-- <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/jqueryui@1.11.1/jquery-ui.min.css"
-    /> -->
+
     <link
       rel="stylesheet"
       href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css"
@@ -90,28 +86,9 @@
         });
       };
     </script>
-    <!-- Bootstrap 4 requires Popper.js -->
-    <!-- <script
-      src="https://unpkg.com/popper.js@1.14.1/dist/umd/popper.min.js"
-      crossorigin="anonymous"
-    ></script> -->
-    <!-- <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.min.js"
-      integrity="sha512-1/RvZTcCDEUjY/CypiMz+iqqtaoQfAITmNSJY17Myp4Ms5mdxPS5UV7iOfdZoxcGhzFbOm6sntTKJppjvuhg4g=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
-    <script src="http://vjs.zencdn.net/6.6.3/video.js"></script> -->
+
     <script src="/assets/scripts/flat-ui.js"></script>
     <script src="/assets/scripts/application.js"></script>
-    <!-- <script src="/assets/scripts/minify.js"></script> -->
-    <script src="/assets/scripts/indicator.js"></script>
-    <!-- <script src="/assets/jquery-linedtextarea.js"></script>
-    <link rel="stylesheet" href="/assets/jquery-linedtextarea.css" /> -->
-
-    <!-- <script src="
-    /assets/scripts/coffeescript.min.js
-    "></script> -->
 
     <script src="/assets/scripts/jquery-ui.js"></script>
     <script type="module" crossorigin src="/assets/main-cb1c7967.js"></script>
@@ -122,42 +99,14 @@
     <div id="root"></div>
     
     <div id="notifications"></div>
-    <!-- <script>
-      $(document).ready(function () {
-        $.each(["danger", "warning", "info", "success"], function (i, type) {
-          $("." + type).on("click", function () {
-            Notify("Stop! Hammer time", null, null, type);
-          });
-        });
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-D3YHHRQDJ3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-        $(".callback").on("click", function () {
-          Notify(
-            "I told you homeboy (You can't touch this)",
-            function () {
-              alert("clicked notification");
-            },
-            function () {
-              alert("clicked x");
-            }
-          );
-        });
-
-        $(".callback-success").on("click", function () {
-          Notify(
-            "I told you homeboy (You can't touch this)",
-            function () {
-              alert("clicked notification");
-            },
-            function () {
-              alert("clicked x");
-            },
-            "success"
-          );
-        });
-
-        // Notify("Can't Touch This");
-        // Notify("Stop! Hammer time", null, null, "danger");
-      });
-    </script> -->
+  gtag('config', 'G-D3YHHRQDJ3');
+</script>
   </body>
 </html>
