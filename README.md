@@ -1,2 +1,2 @@
 # dxbot
-binary script bot
+binary bot script
