@@ -32,4 +32,5 @@ type param = {
   barrier?: string; // optional of '+0.00', '-0.00'
   prediction?: number; // optional of 0-9
 };
+Trade(param);
 ```
