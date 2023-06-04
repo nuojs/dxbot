@@ -7,19 +7,13 @@ Simple library of `Run`, `Stop`, `Trade`, `Notify` <br>
 
 ## Basic library
 
-# ------------------
-
 ```js
 Run(callback, <string | market>)
 ```
 
-# ------------------
-
 ```js
 Stop(); // just void function
 ```
-
-# ------------------
 
 ```ts
 type param = {
@@ -28,8 +22,6 @@ type param = {
 };
 Notify(param);
 ```
-
-# ------------------
 
 ```ts
 type param = {
