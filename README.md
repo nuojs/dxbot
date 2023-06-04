@@ -12,7 +12,7 @@ Run(callback, <string | market>)
 ```
 
 ```js
-Stop(); // just void function
+Stop(); // void function
 ```
 
 ```ts
