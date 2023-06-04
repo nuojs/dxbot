@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <!-- <link rel="icon" type="image/svg+xml" href="/vite.svg" /> -->
+    <!-- <link rel="icon" type="image/svg+xml" href="https://dxbot.vercel.app/vite.svg" /> -->
     <link href="https://dxbot.vercel.app/assets/css/flat-ui.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- <title>dxbot</title> -->
@@ -13,20 +13,14 @@
 
     <link
       rel="stylesheet"
-      href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css"
+      href="https://dxbot.vercel.app//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css"
     />
     <link
       href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
       rel="stylesheet"
     />
-    <link
-      href="https://dxbot.vercel.app/assets/css/flat-ui.css"
-      rel="stylesheet"
-    />
-    <link
-      href="https://dxbot.vercel.app/docs/assets/css/demo.css"
-      rel="stylesheet"
-    />
+    <link href="https://dxbot.vercel.app/assets/css/flat-ui.css" rel="stylesheet" />
+    <link href="https://dxbot.vercel.app/docs/assets/css/demo.css" rel="stylesheet" />
     <script src="https://dxbot.vercel.app/assets/scripts/jquery-3.6.0.js"></script>
     <style>
       #notifications {
@@ -41,7 +35,7 @@
       }
     </style>
     <script>
-      let localDomain = "https://dxbot.vercel.app";
+      let localDomain = "http://localhost:5173";
       Notify = function (text, callback, close_callback, style) {
         var time = "2000";
         var $container = $("#notifications");
@@ -101,24 +95,13 @@
     <script src="https://dxbot.vercel.app/assets/scripts/application.js"></script>
 
     <script src="https://dxbot.vercel.app/assets/scripts/jquery-ui.js"></script>
-    <script
-      type="module"
-      crossorigin
-      src="https://dxbot.vercel.app/assets/main-f6ed772a.js"
-    ></script>
-    <link
-      rel="modulepreload"
-      crossorigin
-      href="https://dxbot.vercel.app/assets/modulepreload-polyfill-3cfb730f.js"
-    />
-    <link
-      rel="stylesheet"
-      href="https://dxbot.vercel.app/assets/index-9b42f2ec.css"
-    />
+    <script type="module" crossorigin href="https://dxbot.vercel.app/assets/main-f912730a.js"></script>
+    <link rel="modulepreload" crossorigin href="https://dxbot.vercel.app/assets/modulepreload-polyfill-3cfb730f.js">
+    <link rel="stylesheet" href="https://dxbot.vercel.app/assets/index-9b42f2ec.css">
   </head>
   <body>
     <div id="root"></div>
-
+    
     <div id="notifications"></div>
     <!-- Google tag (gtag.js) -->
     <script
