@@ -12,7 +12,7 @@ Run(callback, <string | market>)
 ```
 
 ```js
-Stop(); // void function
+Stop(); // just void function
 ```
 
 ```ts
@@ -33,4 +33,19 @@ type param = {
   prediction?: number; // optional of 0-9
 };
 Trade(param);
+```
+
+## Example
+
+```js
+function main(data) {
+  let d = data[data.msg_type];
+  switch (data.msg_type) {
+    case "login": // login event / stop if not registered account
+    case "error": // on error message
+    case "price": // create triger logic
+    case "portfolio": // on active trade
+  }
+}
+Run(main, "R_10");
 ```
