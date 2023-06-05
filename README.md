@@ -2,6 +2,8 @@
 
 ## binary bot script <br>
 
+[Bot Site!!](https://dxbot.vercel.app/)
+
 Binary bot that runs with `JavaScript` and `CoffeeScript` code <br>
 Simple library of `Run`, `Stop`, `Trade`, `Notify` <br>
 
