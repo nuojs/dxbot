@@ -2,13 +2,112 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- <link rel="icon" type="image/svg+xml" href="/vite.svg" /> -->
+    <link
+      href="https://cdn.jsdelivr.net/gh/nuojs/dxbot@main/dist/assets/css/flat-ui.css"
+    />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <!-- <title>dxbot</title> -->
+    <link
+      href="https://cdn.jsdelivr.net/gh/nuojs/dxbot@main/dist/assets/css/vendor/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/nuojs/dxbot@main/dist/assets/css/jquery-ui.css"
+    />
+    <link
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/gh/nuojs/dxbot@main/dist/assets/css/flat-ui.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/gh/nuojs/dxbot@main/dist/docs/assets/css/demo.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/gh/nuojs/dxbot@main/dist/assets/scripts/jquery-3.6.0.js"></script>
+
+    <style>
+      #notifications {
+        cursor: pointer;
+        position: fixed;
+        right: 0px;
+        z-index: 9999;
+        bottom: 0px;
+        margin-bottom: 22px;
+        margin-right: 15px;
+        max-width: 300px;
+      }
+    </style>
+    <script>
+      let localDomain = "https://cdn.jsdelivr.net/gh/nuojs/dxbot@main/dist";
+      Notify = function (text, callback, close_callback, style) {
+        var time = "2000";
+        var $container = $("#notifications");
+        var icon = '<i class="fa fa-info-circle "></i>';
+
+        if (typeof style == "undefined") style = "warning";
+
+        var html = $(
+          '<div class="alert alert-' +
+            style +
+            '  hide">' +
+            icon +
+            " " +
+            text +
+            "</div>"
+        );
+
+        $("<a>", {
+          text: "×",
+          class: "button close",
+          style: "padding-left: 10px;",
+          href: "#",
+          click: function (e) {
+            e.preventDefault();
+            close_callback && close_callback();
+            remove_notice();
+          },
+        }).prependTo(html);
+
+        $container.prepend(html);
+        html.removeClass("hide").hide().fadeIn("slow");
+
+        function remove_notice() {
+          html.stop().fadeOut("slow").remove();
+        }
+
+        var timer = setInterval(remove_notice, time);
+
+        $(html).hover(
+          function () {
+            clearInterval(timer);
+          },
+          function () {
+            timer = setInterval(remove_notice, time);
+          }
+        );
+
+        html.on("click", function () {
+          clearInterval(timer);
+          callback && callback();
+          remove_notice();
+        });
+      };
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/gh/nuojs/dxbot@main/dist/assets/scripts/flat-ui.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/nuojs/dxbot@main/dist/assets/scripts/application.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/gh/nuojs/dxbot@main/dist/assets/scripts/jquery-ui.js"></script>
     <script
       type="module"
       crossorigin
-      src="https://cdn.jsdelivr.net/gh/nuojs/dxbot@main/dist/assets/more-fc451d20.js"
+      src="https://cdn.jsdelivr.net/gh/nuojs/dxbot@main/dist/assets/main-7d1b4f67.js"
     ></script>
     <link
       rel="modulepreload"
@@ -20,8 +119,28 @@
       crossorigin
       href="https://cdn.jsdelivr.net/gh/nuojs/dxbot@main/dist/assets/more-fda2fb38.js"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/nuojs/dxbot@main/dist/assets/index-987e531c.css"
+    />
   </head>
   <body>
     <div id="root"></div>
+
+    <div id="notifications"></div>
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-D3YHHRQDJ3"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-D3YHHRQDJ3");
+    </script>
   </body>
 </html>
