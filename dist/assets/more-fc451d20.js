@@ -1,0 +1,1 @@
+import"./modulepreload-polyfill-3cfb730f.js";import{a1 as o,W as e,R as t,a0 as r}from"./more-fda2fb38.js";console.log("work");o.createRoot(document.getElementById("root")).render(e.jsx(t.StrictMode,{children:e.jsx(r,{})}));
